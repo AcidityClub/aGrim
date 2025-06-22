@@ -1,65 +1,40 @@
-<div align="center">
- <h1>GrimAC</h1>
+# aGrim
+aGrim (AcidityGrim) is a modified version of the open-source, high accuracy anti-cheat,
+"Grim". It is designed to add additional features not found in Grim itself.
 
- <div>
-  <a href="https://github.com/GrimAnticheat/Grim/actions/workflows/gradle-publish.yml">
-   <img alt="Workflow" src="https://github.com/GrimAnticheat/Grim/actions/workflows/gradle-publish.yml/badge.svg" />
-  </a>
-  <a href="https://discord.grim.ac">
-   <img alt="Discord" src="https://img.shields.io/discord/811396969670901800?style=flat&label=Discord&logo=discord">
-  </a>
- </div>
- <br>
-</div>
+Note: Everything in this project is on-premise, and does
+not require any sort of cloud functionality. Privacy concerns are a huge
+issue for many anti-cheats, so...
 
-GrimAC is an open source minecraft anticheat designed for the latest versions of minecraft with
-support for versions 1.8 and higher. Geyser players are fully exempt from the anticheat to prevent
-false positives. This project is currently free and open source, but future versions will eventually
-become paid and/or will include additional subscription based paid checks. If you would like a
-bugfix or enhancement and cannot sponsor the work, pull requests are welcome.
+## aGrim Features
+### Mitigations
+In other high-quality anti-cheats, they use a "mitigation" system
+to prevent cheaters from gaining a major unfair advantage. 
 
-## Downloads
+In these anti-cheats, most mitigations that non-movement related (combat, ...) are silent,
+essentially wasting the cheater's time (it usually takes a while to notice a mitigation, meaning it takes longer
+to return on a new account or try a different bypass method).
 
-- [Modrinth](https://modrinth.com/plugin/grimac)
-- [Hangar](https://hangar.papermc.io/GrimAnticheat/GrimAnticheat)
-- [SpigotMC](https://www.spigotmc.org/resources/grim-anticheat.99923/)
-- *For bleeding edge builds use GitHub
-  artifacts*: [Bukkit](https://nightly.link/GrimAnticheat/Grim/workflows/gradle-publish/2.0/grimac-bukkit.zip), [Fabric](https://nightly.link/GrimAnticheat/Grim/workflows/gradle-publish/2.0/grimac-fabric.zip)
+aGrim has implemented (or will implement) similar style mitigations.
 
-## Resources
+### Local Heuristics (Basic)
+aGrim comes with a few basic locally-held heuristics
+to detect cheats and exploits like Kill Aura and Scaffold.
 
-- For documentation and examples visit the [Wiki](https://github.com/GrimAnticheat/Grim/wiki).
-- For answers to commonly asked questions visit the [FAQ](https://github.com/GrimAnticheat/Grim/wiki/FAQ).
-- For community support and project discussion join our [Discord](https://discord.grim.ac).
+### Additional, very COOL stuff
+aGrim has added/will add various features to mitigate
+and make cheats almost completely ineffective. This includes:
 
-## Requirements & Installation
+- Filter Checks (Removes/Obfuscates sensitive information from packets, like health)
 
-- Java 17 or higher. *For more details
-  see [Updating-to-Java-17](https://github.com/GrimAnticheat/Grim/wiki/Updating-to-Java-17).*
-- A Spigot, Paper, Folia, or Fabric server environment. *For more details
-  see [Supported-environments](https://github.com/GrimAnticheat/Grim/wiki/Supported-environments).*
-- If you use Geyser, place Floodgate on the backend server so grim can exempt bedrock players. Grim
-  cannot access the Floodgate API if it is on the proxy.
-- If you use ViaVersion, it should be on the backend server as movement is highly dependent on
-  client version.
+- Latency-Spoof and Blink mitigations (Stops outgoing packets if blink is being used, lags them
+if suspected of fake-lag)
 
-## Developer Plugin API
+- Transaction Obfuscation
 
-Grim's plugin API allows you to integrate Grim into your own plugins. Visit
-the [plugin API repository](https://github.com/GrimAnticheat/GrimAPI) for the source code and more
-information.
+- Different movement mitigation modes (Want Polar-style setbacks? You can set it in 
+the config!)
 
-## Compiling From Source
-
-1. `git clone https://github.com/GrimAnticheat/Grim.git`
-2. `cd Grim`
-3. `./gradlew build`
-4. The final jars will compile into the `<platform>/build/libs` folders
-
-## Pull Requests
-
-See [Contributing](CONTRIBUTING.md) for more information about contributing and what our guidelines
-are.
 
 ## Grim Supremacy
 
